@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Users-Rai's Book Store</title>
+        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <form th:action="@{logout}" method="post">
+                <p>
+                    Welcome <b>[[${#request.userPrincipal.principal.fullName}]]</b>
+                </p>
+                <input type="submit" value="Sign Out" class="btn btn-danger btn-sm mb-2"/>
+            </form>
+            <div>
+                <h1>Available Books</h1>
+            </div>
+            <div>
+                <a th:href="@{/add_book}" class="btn btn-dark btn-sm mb-3">Add Book</a>
+            </div>
+            <div>
+                <table class="table table-striped table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Price($)</th>
+                            <th>Quantity</th>
+                            <th>Description</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="book: ${listBooks}">
+                            <td th:text="${book.name}">Name</td>
+                            <td th:text="${book.price}">Price</td>
+                            <td th:text="${book.quantity}">Quantity</td>
+                            <td th:text="${book.description}">Description</td>
+                            <td>
+                                <a th:href="@{/update_book/{id}(id=${book.id})}" class="btn btn-dark btn-sm mb-3">Update</a>
+                                <a th:href="@{/delete_book/{id}(id=${book.id})}" class="btn btn-danger btn-sm mb-3">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+    </body>
+</html>

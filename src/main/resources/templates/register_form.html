@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Registration-Rai's Book Store</title>
+        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" th:href="@{/style.css}">
+    </head>
+    <body>
+        <div class="container text-center">
+            <div class="universal-form">
+                <h1>You should register first!</h1>
+                <form th:action="@{/process_register}" method="post" th:object="${user}" style="max-width: 600px; margin: 0 auto;">
+                    <div class="m-3">
+                        <!-- First name field-->
+                        <div class="form-group row">
+                            <label class="col-form-label col-4">First Name</label>
+                            <div class="col-8">
+                                <input type="text" class="form-control" th:field="*{firstName}" required
+                                maxlength="20"/>
+                            </div>
+                        </div>
+                        <!-- Last Name field-->
+                        <div class="form-group row">
+                            <label class="col-form-label col-4">Last Name</label>
+                            <div class="col-8">
+                                <input type="text" class="form-control" th:field="*{lastName}" required
+                                maxlength="20"/>
+                            </div>
+                        </div>
+                        <!-- email field -->
+                        <div class="form-group row">
+                            <label class="col-form-label col-4">Email</label>
+                            <div class="col-8">
+                                <input type="email" class="form-control" th:field="*{email}" required
+                                maxlength="50"/>
+                            </div>
+                        </div>
+                        <!-- password field -->
+                        <div class="form-group row">
+                            <label class="col-form-label col-4">Password</label>
+                            <div class="col-8">
+                                <input type="password" class="form-control" th:field="*{password}" required
+                                minlength="8" maxlength="64"/>
+                            </div>
+                        </div>
+                        <!-- submit button -->
+                        <div>
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+    </body>
+</html>

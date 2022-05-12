@@ -1,0 +1,47 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+    background-color: #28282B !important;
+}
+.container{
+    background-color: #28282B !important;
+}
+.h1-title{
+    padding-top: 20px;
+    color: #FFF;
+    text-align: center;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+}
+
+.logo img{
+    width: 150px;
+}
+
+.btn-primary{
+    background-color: #FFD801 !important;
+    border-color: #FFD801 !important;
+    color: #28282B;
+}
+
+.button-group{
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.per-button{
+    margin: 5px;
+}
+.form-control{
+    color: #FFF !important;
+}
+.universal-form{
+    margin-top: 10%;
+    color: #FFF;
+}

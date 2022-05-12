@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Home-Rai's Book Store</title>
+        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" th:href="@{/style.css}">
+    </head>
+    <body>
+        <div class="container">
+            <div class="logo">
+                <img th:src="@{/mustard-yellow-designify.png}" alt="Logo">
+            </div>
+            <div class="h1-title">
+                <h1>Welcome to Rai's Book Store</h1>
+            </div>
+            <div class="button-group">
+                <div class="per-button">
+                    <h3><a th:href="@{/register}" class="btn btn-primary btn-lg btn-block">Register</a></h3>
+                </div>
+                <div class="per-button">
+                    <h3><a th:href="@{/login}" class="btn btn-primary btn-lg btn-block">Login</a></h3>
+                </div>
+                <div class="per-button">
+                    <h3><a th:href="@{/list_products}" class="btn btn-primary btn-lg btn-block">Our Books</a></h3>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
